@@ -8,7 +8,7 @@
 		var guessWord = words[Math.floor(Math.random()*words.length)];
 			   console.log(guessWord);
 	
-
+    var answer = "";     
 		var answerArray = [];
 		for (var i = 0; i < guessWord.length; i++) {
 			answerArray[i] = " _";
@@ -36,4 +36,24 @@
           "<p>" + remainingLetters-- + "<p>";
 
     	  document.querySelector("#game").innerHTML = html;	
-  };
+
+          answer = html;
+
+      //check if the word contains the letter entered
+
+      var checkContains = guessWord.includes(userInput);
+          if (checkContains != true) {
+            console.log(false);
+          }
+          else {
+            console.log(true);
+          }  
+          
+         } ;
+
+
+
+
+
+
+         
