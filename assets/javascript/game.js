@@ -37,9 +37,10 @@
 
     	  document.querySelector("#game").innerHTML = html;	
 
-          answer = html;
+          
 
       //check if the word contains the letter entered
+      //if yes, replace the "_" with the matched letter
 
       var checkContains = guessWord.includes(userInput);
           if (checkContains != true) {
@@ -47,13 +48,13 @@
           }
           else {
             console.log(true);
-          }  
-          
-         } ;
+            
+          }
+        innerHTML.replace("answerArray","userInput");
+    };
 
 
 
 
 
 
-         
