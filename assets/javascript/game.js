@@ -8,6 +8,7 @@
 		var guessWord = words[Math.floor(Math.random()*words.length)];
 			   console.log(guessWord);
 	
+    var score = 0;
     var answer = "";     
 		var answerArray = [];
 		for (var i = 0; i < guessWord.length; i++) {
@@ -26,18 +27,12 @@
             			answerArray[j] = guess;
             			remainingLetters--;
             		}
-            	
-            	}
-            
-
-
+              
           var html =
-          "<p>" + answerArray.join("") + "</p>" +
-          "<p>" + remainingLetters-- + "<p>";
+          "<p>" + answerArray.join("") + "</p>";
+    	     document.querySelector("#game").innerHTML = html;	
 
-    	  document.querySelector("#game").innerHTML = html;	
-
-          
+          }
 
       //check if the word contains the letter entered
       //if yes, replace the "_" with the matched letter
@@ -48,13 +43,15 @@
           }
           else {
             console.log(true);
+            score++;
             
           }
-        innerHTML.replace("answerArray","userInput");
-    };
 
-
-
-
+        document.querySelector("#score").innerHTML = "Score: " + score +
+        "<p>Guesses Remaining: " + remainingLetters-- + "<p>";
+        console.log(score);
+      
+          
+};
 
 
